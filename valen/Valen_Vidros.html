@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Valen Vidros | Vidro sob medida no Grande ABC</title>
+<meta name="description" content="Box de banheiro, espelhos, portas, sacadas, coberturas e divisórias em vidro sob medida. Medição sem custo em São Bernardo do Campo e região do ABC.">
+<meta name="theme-color" content="#141518">
+<meta property="og:title" content="Valen Vidros | Vidro sob medida no Grande ABC">
+<meta property="og:description" content="Da medição à instalação: box, espelhos, portas, sacadas, coberturas e divisórias em vidro.">
+<meta property="og:image" content="fotos/box-02.jpg">
+<link rel="icon" href="logo-marca.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ---------- base (mobile first) ---------- */
+:root{
+  --bg:#141518;--bg2:#1a1b1f;--card:#212228;--card2:#2a2b32;
+  --line:rgba(255,255,255,.11);--text:#ededf0;--muted:#a9abb3;
+  --vio:#5d49a6;--vio2:#7a63c9;--lil:#cdbcf0;
+  --f:'Archivo',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --pad:clamp(20px,5vw,56px);--max:1180px;
+  --tri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='76' height='66' viewBox='0 0 76 66' fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.2'%3E%3Cpath d='M38 5 71 61H5Z'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+html.lock{overflow:hidden}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--lil);outline-offset:3px;border-radius:6px}
+section[id]{scroll-margin-top:64px}
+.wrap{width:min(100% - 2*var(--pad),var(--max));margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;left:12px;top:-60px;z-index:100;background:#fff;color:#111;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:top .2s}
+.skip:focus{top:12px}
+
+.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--lil)}
+h1,h2,h3{font-stretch:112%;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:clamp(1.9rem,7.4vw,3.3rem);font-weight:700;margin-top:10px}
+.sec{padding:clamp(64px,13vw,120px) 0}
+.sec-head p.sub{color:var(--muted);margin-top:14px;max-width:46ch}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;padding:0 1.6em;border-radius:999px;border:1px solid transparent;font:600 .98rem var(--f);color:#fff;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .25s,background .25s,border-color .25s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn-primary{background:linear-gradient(135deg,var(--vio),var(--vio2));box-shadow:0 12px 32px -12px rgba(122,99,201,.8)}
+.btn-primary:hover{box-shadow:0 16px 38px -10px rgba(122,99,201,.95)}
+.btn-ghost{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.13)}
+.btn-sm{min-height:42px;padding:0 1.15em;font-size:.88rem}
+
+/* reveal ao rolar (só quando há JS) */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- topo ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(10px + env(safe-area-inset-top)) var(--pad) 10px;transition:background .3s,box-shadow .3s}
+.top.solid{background:rgba(20,21,24,.84);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--line)}
+.brand{display:block;line-height:0}
+.brand img{height:40px;width:auto}
+.top-r{display:flex;align-items:center;gap:10px}
+.nav-d{display:none}
+.burger{width:44px;height:44px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.07);display:grid;place-content:center;gap:5px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.burger i{display:block;width:20px;height:2px;border-radius:2px;background:#fff;transition:transform .3s,opacity .2s}
+.burger[aria-expanded=true] i:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.burger[aria-expanded=true] i:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:55;display:flex;flex-direction:column;justify-content:center;padding:90px var(--pad) 40px;background:rgba(18,19,22,.98);background-image:var(--tri);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s,transform .3s,visibility .3s}
+.menu.open{opacity:1;visibility:visible;transform:none}
+.menu a{font-size:clamp(1.7rem,8vw,2.4rem);font-weight:600;font-stretch:112%;letter-spacing:-.02em;text-decoration:none;padding:.42em 0;border-bottom:1px solid var(--line)}
+.menu .btn{margin-top:28px;border:0;font-size:1rem;letter-spacing:0;font-stretch:100%}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:92px var(--pad) 28px;overflow:hidden}
+.hero-photos{position:absolute;inset:0;z-index:-2}
+.hero-photos img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero-photos img:not(:first-child){display:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,21,24,.7) 0%,rgba(20,21,24,.28) 26%,rgba(20,21,24,.82) 62%,var(--bg) 100%)}
+.hero-in{width:100%;max-width:640px}
+.hero-logo{width:min(46vw,190px);height:auto;margin-bottom:18px}
+.hero h1{font-size:clamp(2rem,9.4vw,4.4rem);font-weight:700;margin-top:12px}
+.hero h1 em{font-style:normal;background:linear-gradient(95deg,#e6dbfa,#a68fe6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin-top:14px;color:#d3d4da;font-size:1rem;max-width:44ch}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.actions .btn{padding:0 .8em;font-size:.94rem}
+.proof{list-style:none;display:grid;gap:8px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:.9rem;color:#d3d4da}
+.proof li{display:flex;align-items:center;gap:10px}
+.proof li::before{content:"";width:8px;height:8px;border:1.5px solid var(--lil);border-radius:2px;transform:rotate(45deg);flex:none}
+
+/* ---------- serviços ---------- */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);padding:6px var(--pad) 24px;margin-top:30px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.svc{position:relative;flex:0 0 min(78vw,330px);aspect-ratio:4/5.4;scroll-snap-align:start;border-radius:22px;overflow:hidden;display:flex;align-items:flex-end;text-decoration:none;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);-webkit-tap-highlight-color:transparent}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.svc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(14,15,18,.94) 92%)}
+.svc-b{position:relative;z-index:1;padding:22px}
+.svc h3{font-size:1.4rem;font-weight:700}
+.svc p{margin-top:8px;font-size:.92rem;color:#cfd0d6;line-height:1.5}
+.svc .go{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:600;font-size:.9rem;color:var(--lil)}
+.svc .go::after{content:"→";transition:transform .25s}
+.svc:hover img{transform:scale(1.06)}
+.svc:hover .go::after{transform:translateX(5px)}
+
+/* ---------- trabalhos ---------- */
+.work{background:var(--bg2)}
+.filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:26px calc(-1*var(--pad)) 0;padding:0 var(--pad) 4px}
+.filters::-webkit-scrollbar{display:none}
+.fil{flex:none;min-height:42px;padding:0 1.15em;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-size:.9rem;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+.fil[aria-pressed=true]{background:linear-gradient(135deg,var(--vio),var(--vio2));border-color:transparent;color:#fff}
+.gal{columns:2;column-gap:10px;margin-top:22px}
+.gal figure{break-inside:avoid;margin:0 0 10px;border-radius:14px;overflow:hidden;background:var(--card)}
+.gal figure[hidden]{display:none}
+.gal button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;line-height:0}
+.gal img{width:100%;height:auto;transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .3s}
+.gal button:hover img{transform:scale(1.04)}
+.more{display:flex;justify-content:center;margin-top:18px}
+.more[hidden]{display:none}
+
+dialog.lb{border:0;padding:0;margin:0;background:transparent;width:100%;height:100%;max-width:100vw;max-height:100vh;max-height:100dvh;color:#fff}
+dialog.lb::backdrop{background:rgba(9,9,11,.95)}
+.lb-in{position:relative;width:100%;height:100%;display:grid;place-items:center;padding:64px 10px 56px}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;touch-action:pan-y}
+.lb-b{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(30,31,36,.8);display:grid;place-items:center;font-size:1.3rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.lb-x{top:calc(10px + env(safe-area-inset-top));right:12px}
+.lb-p{left:10px;top:50%;transform:translateY(-50%)}
+.lb-n{right:10px;top:50%;transform:translateY(-50%)}
+.lb-cap{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom));text-align:center;font-size:.86rem;color:var(--muted);padding:0 70px}
+
+/* ---------- como funciona ---------- */
+.steps{list-style:none;display:grid;gap:12px;margin-top:30px;counter-reset:s}
+.steps li{position:relative;padding:22px 22px 22px 78px;border-radius:20px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.steps li::before{counter-increment:s;content:"0" counter(s);position:absolute;left:20px;top:20px;width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--vio),var(--vio2));font-weight:700;font-stretch:112%}
+.steps h3{font-size:1.15rem;font-weight:700}
+.steps p{margin-top:6px;color:var(--muted);font-size:.95rem}
+
+/* ---------- atendimento ---------- */
+.area{position:relative;overflow:hidden;border-radius:26px;padding:34px 24px;background:linear-gradient(135deg,#2b2750,#1e1f26 70%);background-image:var(--tri),linear-gradient(135deg,#2b2750,#1e1f26 70%);box-shadow:inset 0 0 0 1px var(--line)}
+.area h2{font-size:clamp(1.7rem,6.6vw,2.7rem)}
+.area p{margin-top:12px;color:#cfd0d6;max-width:48ch}
+.area .btn{margin-top:22px}
+
+/* ---------- orçamento ---------- */
+.contact-in{display:grid;gap:30px}
+.facts{display:grid;gap:8px;margin-top:20px;color:#d3d4da}
+.facts span{display:flex;gap:10px;align-items:center}
+.facts span::before{content:"";width:8px;height:8px;border:1.5px solid var(--lil);border-radius:2px;transform:rotate(45deg);flex:none}
+.direct{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+.direct a.tel{display:inline-block;margin-top:4px;font-size:1.5rem;font-weight:700;font-stretch:112%;color:var(--text);text-decoration:none;letter-spacing:-.01em}
+form{display:grid;gap:20px;padding:22px;border-radius:24px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.lab{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:block}
+.chips{border:0;display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;min-height:44px;padding:0 1.05em;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);font-size:.93rem;cursor:pointer;transition:background .2s,border-color .2s}
+.chip:hover span{border-color:rgba(255,255,255,.3)}
+.chip input:checked+span{background:linear-gradient(135deg,var(--vio),var(--vio2));border-color:transparent;color:#fff}
+.chip input:focus-visible+span{outline:2px solid var(--lil);outline-offset:3px}
+input[type=text],textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:15px 16px;transition:border-color .2s,background .2s}
+input[type=text]:focus,textarea:focus{outline:0;border-color:var(--vio2);background:rgba(255,255,255,.08)}
+textarea{min-height:120px;resize:vertical}
+::placeholder{color:#7f818a}
+#st{font-size:.92rem;min-height:1.4em;color:var(--lil)}
+#st a{color:var(--text)}
+
+/* ---------- rodapé ---------- */
+.foot{padding:56px 0 calc(110px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg2)}
+.foot-in{display:grid;gap:22px}
+.foot-logo{width:min(60vw,220px);height:auto}
+.foot p{color:var(--muted);font-size:.94rem;max-width:42ch}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 22px;font-weight:600}
+.foot-links a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+.copy{font-size:.82rem!important}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--vio),var(--vio2));box-shadow:0 14px 34px -8px rgba(93,73,166,.9),0 0 0 1px rgba(255,255,255,.14);opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;transition:opacity .3s,transform .3s;-webkit-tap-highlight-color:transparent}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.fab svg{width:30px;height:30px;fill:#fff}
+.fab.show::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--vio2);animation:ring 2.6s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- tablet ---------- */
+@media (min-width:700px){
+  .actions{grid-template-columns:auto auto;justify-content:start;gap:12px}
+  .actions .btn{padding:0 1.6em;font-size:.98rem}
+  .proof{grid-template-columns:auto auto;justify-content:start;gap:10px 34px}
+  .gal{columns:3;column-gap:12px}
+  .gal figure{margin-bottom:12px}
+  .steps{grid-template-columns:1fr 1fr}
+  .area{padding:48px 44px}
+  form{padding:30px}
+}
+
+/* ---------- desktop ---------- */
+@media (min-width:900px){
+  .burger,.menu{display:none}
+  .brand img{height:46px}
+  .nav-d{display:flex;gap:30px;font-size:.93rem;font-weight:500}
+  .nav-d a{text-decoration:none;color:#d8d9de;background:linear-gradient(var(--lil),var(--lil)) 0 100%/0 1px no-repeat;padding-bottom:3px;transition:background-size .3s,color .2s}
+  .nav-d a:hover{color:#fff;background-size:100% 1px}
+  .top-r{gap:30px}
+  .hero{display:grid;grid-template-columns:1.02fr 1fr;align-items:center;gap:clamp(24px,4vw,64px);padding:110px var(--pad) 60px;background:radial-gradient(60% 55% at 85% 12%,rgba(93,73,166,.28),transparent 70%),var(--tri),var(--bg)}
+  .hero::after{display:none}
+  .hero-in{order:-1;max-width:none;margin-left:max(0px,calc((100vw - var(--max))/2 - var(--pad)))}
+  .hero-logo{width:min(20vw,240px);margin-bottom:26px}
+  .hero h1{font-size:clamp(2.4rem,4.2vw,4rem)}
+  .lead{font-size:1.1rem}
+  .hero-photos{position:relative;inset:auto;z-index:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;height:min(76vh,700px);margin-right:max(0px,calc((100vw - var(--max))/2 - var(--pad)))}
+  .hero-photos img{display:block!important;border-radius:20px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8),inset 0 0 0 1px var(--line)}
+  .hero-photos img:nth-child(1){margin-top:56px}
+  .hero-photos img:nth-child(2){margin-bottom:56px}
+  .hero-photos img:nth-child(3){margin-top:28px;margin-bottom:28px}
+  .rail{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;overflow:visible;padding:0;margin-inline:auto;width:min(100% - 2*var(--pad),var(--max))}
+  .svc{flex:none;aspect-ratio:auto;min-height:460px;border-radius:20px}
+  .svc::after{background:linear-gradient(180deg,transparent 12%,rgba(14,15,18,.95) 78%)}
+  .svc-b{padding:18px}
+  .svc h3{font-size:1.15rem}
+  .svc p{font-size:.85rem}
+  .filters{margin-inline:0;padding-inline:0}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .steps li{padding:84px 22px 24px}
+  .steps li::before{left:22px;top:22px}
+  .contact-in{grid-template-columns:1fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:start}
+  .contact-in>div:first-child{position:sticky;top:110px}
+  .foot-in{grid-template-columns:auto 1fr auto;align-items:center;gap:40px}
+  .foot{padding-bottom:56px}
+}
+@media (min-width:1100px){
+  .gal{columns:4}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Valen Vidros","description":"Vidro sob medida: box de banheiro, espelhos, portas, sacadas, coberturas e divisórias.","telephone":"+55 11 97066-1030","areaServed":["São Bernardo do Campo","Grande ABC"],"image":"fotos/box-02.jpg"}
+</script>
+</head>
+<body>
+<a class="skip" href="#servicos">Ir para o conteúdo</a>
+
+<header class="top" id="topo">
+  <a class="brand" href="#inicio" aria-label="Valen Vidros, início"><img src="logo-marca-claro.png" alt="" width="377" height="193"></a>
+  <div class="top-r">
+    <nav class="nav-d" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#orcamento">Orçamento</a>
+    </nav>
+    <a class="btn btn-primary btn-sm wa" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      WhatsApp
+    </a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu">
+  <a href="#servicos">Serviços</a>
+  <a href="#trabalhos">Trabalhos</a>
+  <a href="#como-funciona">Como funciona</a>
+  <a href="#orcamento">Orçamento</a>
+  <a class="btn btn-primary wa" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero-photos" aria-hidden="true">
+    <img src="fotos/box-01.jpg" alt="" width="960" height="1280" fetchpriority="high" decoding="async">
+    <img src="fotos/cobertura-03.jpg" alt="" width="1200" height="1600" decoding="async">
+    <img src="fotos/espelho-02.jpg" alt="" width="1200" height="1600" decoding="async">
+  </div>
+  <div class="hero-in">
+    <img class="hero-logo" src="logo-valen-claro.png" alt="Valen Vidros" width="510" height="268">
+    <p class="eyebrow">São Bernardo do Campo · Grande ABC</p>
+    <h1>Vidro sob medida, <em>da medição à instalação.</em></h1>
+    <p class="lead">Box, espelhos, portas, sacadas, coberturas e divisórias em vidro, com acabamento limpo.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#orcamento">Pedir orçamento</a>
+      <a class="btn btn-ghost wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <ul class="proof">
+      <li>Medição no local sem custo</li>
+      <li>Retorno em até 24 horas úteis</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ============ -->
+<section class="sec" id="servicos" aria-labelledby="t-serv">
+  <div class="wrap sec-head rv">
+    <p class="eyebrow">Serviços</p>
+    <h2 id="t-serv">O vidro certo para cada ambiente.</h2>
+    <p class="sub">Toque em um serviço para pedir seu orçamento.</p>
+  </div>
+  <div class="rail rv">
+    <a class="svc" href="#orcamento" data-s="Box de banheiro">
+      <img src="fotos/box-02.jpg" alt="" width="960" height="1280" loading="lazy" decoding="async">
+      <div class="svc-b"><h3>Box de banheiro</h3><p>Articulado, deslizante ou pivotante, em vidro temperado com perfis de alumínio.</p><span class="go">Orçar este serviço</span></div>
+    </a>
+    <a class="svc" href="#orcamento" data-s="Vidro temperado">
+      <img src="fotos/porta-01.jpg" alt="" width="960" height="1280" loading="lazy" decoding="async">
+      <div class="svc-b"><h3>Vidro temperado</h3><p>Portas, janelas e fachadas com alta resistência e acabamento limpo.</p><span class="go">Orçar este serviço</span></div>
+    </a>
+    <a class="svc" href="#orcamento" data-s="Espelhos">
+      <img src="fotos/espelho-04.jpg" alt="" width="960" height="1280" loading="lazy" decoding="async">
+      <div class="svc-b"><h3>Espelhos</h3><p>Sob medida, com borda lapidada ou canaleta de alumínio.</p><span class="go">Orçar este serviço</span></div>
+    </a>
+    <a class="svc" href="#orcamento" data-s="Sacadas e coberturas">
+      <img src="fotos/cobertura-03.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async">
+      <div class="svc-b"><h3>Sacadas e coberturas</h3><p>Fechamento em vidro laminado ou temperado, fixo ou deslizante.</p><span class="go">Orçar este serviço</span></div>
+    </a>
+    <a class="svc" href="#orcamento" data-s="Divisórias">
+      <img src="fotos/fosco-02.jpg" alt="" width="1200" height="1600" loading="lazy" decoding="async">
+      <div class="svc-b"><h3>Divisórias</h3><p>Vidro jateado, temperado ou laminado para escritórios e comércios.</p><span class="go">Orçar este serviço</span></div>
+    </a>
+  </div>
+  <div class="wrap rv"><p class="sub" style="color:var(--muted);margin-top:6px;font-size:.95rem">Também fazemos instalação e manutenção.</p></div>
+</section>
+
+<!-- ============ TRABALHOS ============ -->
+<section class="sec work" id="trabalhos" aria-labelledby="t-trab">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Trabalhos</p>
+      <h2 id="t-trab">Obras reais, feitas pela Valen.</h2>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filtrar por serviço">
+      <button class="fil" type="button" data-f="todos" aria-pressed="true">Todos</button>
+      <button class="fil" type="button" data-f="box" aria-pressed="false">Box</button>
+      <button class="fil" type="button" data-f="espelhos" aria-pressed="false">Espelhos</button>
+      <button class="fil" type="button" data-f="temperado" aria-pressed="false">Vidro temperado</button>
+      <button class="fil" type="button" data-f="sacadas" aria-pressed="false">Sacadas e coberturas</button>
+      <button class="fil" type="button" data-f="divisorias" aria-pressed="false">Divisórias</button>
+    </div>
+    <div class="gal" id="gal">
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de canto com ferragens em cobre"><img src="fotos/box-02.jpg" alt="Box de canto com ferragens em cobre" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Cobertura e fechamento em vidro na entrada de um prédio"><img src="fotos/cobertura-03.jpg" alt="Cobertura e fechamento em vidro na entrada de um prédio" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelho com iluminação de LED"><img src="fotos/espelho-04.jpg" alt="Espelho com iluminação de LED" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de vidro com porta pivotante e puxador preto"><img src="fotos/box-01.jpg" alt="Box de vidro com porta pivotante e puxador preto" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Fechamento em vidro e guarda-corpo em área externa"><img src="fotos/fechamento-01.jpg" alt="Fechamento em vidro e guarda-corpo em área externa" width="1600" height="1200" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelho redondo com moldura em madeira"><img src="fotos/espelho-02.jpg" alt="Espelho redondo com moldura em madeira" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="divisorias"><button type="button" aria-label="Ampliar: Divisórias de vidro fosco com puxadores pretos"><img src="fotos/fosco-02.jpg" alt="Divisórias de vidro fosco com puxadores pretos" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de canto em vidro temperado com perfil de alumínio"><img src="fotos/box-03.jpg" alt="Box de canto em vidro temperado com perfil de alumínio" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="temperado"><button type="button" aria-label="Ampliar: Porta e fixo de vidro com perfil preto"><img src="fotos/porta-01.jpg" alt="Porta e fixo de vidro com perfil preto" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelho redondo com LED em closet"><img src="fotos/espelho-06.jpg" alt="Espelho redondo com LED em closet" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Cobertura de vidro com estrutura em alumínio"><img src="fotos/cobertura-01.jpg" alt="Cobertura de vidro com estrutura em alumínio" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box com puxadores pretos e iluminação embutida"><img src="fotos/box-04.jpg" alt="Box com puxadores pretos e iluminação embutida" width="900" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="divisorias"><button type="button" aria-label="Ampliar: Portas de correr em vidro fosco"><img src="fotos/fosco-01.jpg" alt="Portas de correr em vidro fosco" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de vidro do piso ao teto em banheiro de mármore"><img src="fotos/box-06.jpg" alt="Box de vidro do piso ao teto em banheiro de mármore" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="temperado"><button type="button" aria-label="Ampliar: Esquadria de vidro com perfil preto para varanda"><img src="fotos/porta-03.jpg" alt="Esquadria de vidro com perfil preto para varanda" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelho de parede inteira em dormitório"><img src="fotos/espelho-01.jpg" alt="Espelho de parede inteira em dormitório" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Pérgola com cobertura de vidro"><img src="fotos/cobertura-07.jpg" alt="Pérgola com cobertura de vidro" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de vidro com moldura preta"><img src="fotos/box-05.jpg" alt="Box de vidro com moldura preta" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="temperado"><button type="button" aria-label="Ampliar: Porta de vidro com perfil preto"><img src="fotos/porta-02.jpg" alt="Porta de vidro com perfil preto" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelhos em corredor e dormitório"><img src="fotos/espelho-03.jpg" alt="Espelhos em corredor e dormitório" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Cobertura de vidro sobre estrutura branca"><img src="fotos/cobertura-04.jpg" alt="Cobertura de vidro sobre estrutura branca" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box duplo com puxadores pretos e espelhos com LED"><img src="fotos/box-09.jpg" alt="Box duplo com puxadores pretos e espelhos com LED" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="espelhos"><button type="button" aria-label="Ampliar: Espelho em parede de sala de jantar"><img src="fotos/espelho-05.jpg" alt="Espelho em parede de sala de jantar" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Fechamento em vidro com porta de entrada"><img src="fotos/cobertura-05.jpg" alt="Fechamento em vidro com porta de entrada" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box de vidro incolor sem perfis aparentes"><img src="fotos/box-07.jpg" alt="Box de vidro incolor sem perfis aparentes" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Cobertura de vidro azul vista por baixo"><img src="fotos/cobertura-02.jpg" alt="Cobertura de vidro azul vista por baixo" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="box"><button type="button" aria-label="Ampliar: Box articulado de vidro temperado"><img src="fotos/box-08.jpg" alt="Box articulado de vidro temperado" width="960" height="1280" loading="lazy" decoding="async"></button></figure>
+      <figure data-c="sacadas"><button type="button" aria-label="Ampliar: Fechamento e cobertura em vidro com estrutura branca"><img src="fotos/cobertura-06.jpg" alt="Fechamento e cobertura em vidro com estrutura branca" width="1200" height="1600" loading="lazy" decoding="async"></button></figure>
+    </div>
+    <div class="more"><button class="btn btn-ghost" id="more" type="button">Ver mais fotos</button></div>
+  </div>
+</section>
+
+<dialog class="lb" id="lb" aria-label="Foto ampliada">
+  <div class="lb-in">
+    <img id="lb-img" src="" alt="">
+    <button class="lb-b lb-x" id="lb-x" type="button" aria-label="Fechar">✕</button>
+    <button class="lb-b lb-p" id="lb-p" type="button" aria-label="Foto anterior">‹</button>
+    <button class="lb-b lb-n" id="lb-n" type="button" aria-label="Próxima foto">›</button>
+    <p class="lb-cap" id="lb-cap"></p>
+  </div>
+</dialog>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="sec" id="como-funciona" aria-labelledby="t-como">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Como funciona</p>
+      <h2 id="t-como">Do primeiro contato à instalação.</h2>
+    </div>
+    <ol class="steps">
+      <li class="rv"><h3>Conte o que precisa</h3><p>Chame no WhatsApp ou preencha o formulário. Retorno em até 24 horas úteis.</p></li>
+      <li class="rv"><h3>Medição no local</h3><p>Vamos até você tirar as medidas, sem custo.</p></li>
+      <li class="rv"><h3>Vidro sob medida</h3><p>Tudo é feito nas dimensões do seu ambiente, com o acabamento que você escolher.</p></li>
+      <li class="rv"><h3>Instalação</h3><p>Instalamos com cuidado e também fazemos manutenção depois.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ ATENDIMENTO ============ -->
+<section class="wrap" aria-labelledby="t-area" style="padding-bottom:clamp(64px,13vw,120px)">
+  <div class="area rv">
+    <p class="eyebrow">Onde atendemos</p>
+    <h2 id="t-area">São Bernardo do Campo e toda a região do ABC.</h2>
+    <p>Fale com a gente e combinamos a medição no seu endereço.</p>
+    <a class="btn btn-primary wa" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</section>
+
+<!-- ============ ORÇAMENTO ============ -->
+<section class="sec work" id="orcamento" aria-labelledby="t-orc">
+  <div class="wrap contact-in">
+    <div class="rv">
+      <p class="eyebrow">Orçamento</p>
+      <h2 id="t-orc">Conte o que você precisa.</h2>
+      <div class="facts"><span>Medição no local sem custo.</span><span>Retorno em até 24 horas úteis.</span></div>
+      <div class="direct">Prefere falar direto?<br><a class="tel" href="tel:+5511970661030">(11) 97066-1030</a></div>
+    </div>
+    <form id="f" class="rv" novalidate>
+      <fieldset class="chips">
+        <legend class="lab">Serviço</legend>
+        <label class="chip"><input type="radio" name="s" value="Box de banheiro"><span>Box</span></label>
+        <label class="chip"><input type="radio" name="s" value="Vidro temperado"><span>Vidro temperado</span></label>
+        <label class="chip"><input type="radio" name="s" value="Espelhos"><span>Espelhos</span></label>
+        <label class="chip"><input type="radio" name="s" value="Sacadas e coberturas"><span>Sacadas e coberturas</span></label>
+        <label class="chip"><input type="radio" name="s" value="Divisórias"><span>Divisórias</span></label>
+        <label class="chip"><input type="radio" name="s" value="Outro"><span>Outro</span></label>
+      </fieldset>
+      <div><label class="lab" for="d">Sobre o projeto</label><textarea id="d" placeholder="Medidas, ambiente, o que você imaginou…"></textarea></div>
+      <div><label class="lab" for="n">Seu nome</label><input type="text" id="n" placeholder="Como podemos te chamar?" autocomplete="name"></div>
+      <button class="btn btn-primary" type="submit">Enviar pelo WhatsApp</button>
+      <p id="st" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <img class="foot-logo" src="logo-valen-claro.png" alt="Valen Vidros" width="510" height="268" loading="lazy">
+    <div>
+      <p>Vidro sob medida em São Bernardo do Campo e região do ABC.</p>
+      <p class="copy" style="margin-top:10px">© <span id="y"></span> Valen Vidros</p>
+    </div>
+    <div class="foot-links"><a href="tel:+5511970661030">(11) 97066-1030</a><a class="wa" href="#" target="_blank" rel="noopener">WhatsApp</a></div>
+  </div>
+</footer>
+
+<a class="fab wa" id="fab" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+const PHONE='5511970661030'; // DDI + DDD + número
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const waUrl=(t)=>`https://wa.me/${PHONE}`+(t?`?text=${encodeURIComponent(t)}`:'');
+
+/* links de WhatsApp */
+$$('.wa').forEach(a=>a.href=waUrl('Olá, Valen Vidros! Gostaria de um orçamento.'));
+$('#y').textContent=new Date().getFullYear();
+
+/* topo: fundo ao rolar, botão flutuante, menu */
+const topo=$('.top'),fab=$('#fab'),hero=$('#inicio');
+function onScroll(){
+  const y=scrollY;
+  topo.classList.toggle('solid',y>24);
+  fab.classList.toggle('show',y>hero.offsetHeight*.55);
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const burger=$('#burger'),menu=$('#menu');
+function setMenu(o){
+  menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);
+  burger.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');
+  document.documentElement.classList.toggle('lock',o);
+}
+burger.addEventListener('click',()=>setMenu(!menu.classList.contains('open')));
+menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+matchMedia('(min-width:900px)').addEventListener('change',e=>{if(e.matches)setMenu(false)});
+
+/* aparecer ao rolar */
+const rv=$$('.rv');
+if('IntersectionObserver' in window&&!still){
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  rv.forEach(el=>io.observe(el));
+}else rv.forEach(el=>el.classList.add('in'));
+
+/* serviços -> já marca o serviço no formulário */
+const radios=$$('input[name=s]');
+$$('.svc').forEach(a=>a.addEventListener('click',()=>{
+  const r=radios.find(x=>x.value===a.dataset.s);if(r)r.checked=true;
+}));
+
+/* galeria: filtro, "ver mais" e lightbox */
+const figs=$$('#gal figure'),LIMIT=8;
+let filter='todos',expanded=false,shown=[];
+function render(){
+  const match=figs.filter(f=>filter==='todos'||f.dataset.c===filter);
+  shown=[];
+  figs.forEach(f=>{
+    const i=match.indexOf(f);
+    const vis=i>-1&&(expanded||i<LIMIT);
+    f.hidden=!vis;if(vis)shown.push(f);
+  });
+  $('.more').hidden=expanded||match.length<=LIMIT;
+}
+$$('.fil').forEach(b=>b.addEventListener('click',()=>{
+  filter=b.dataset.f;expanded=false;
+  $$('.fil').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  render();
+}));
+$('#more').addEventListener('click',()=>{expanded=true;render()});
+render();
+
+const lb=$('#lb'),lbImg=$('#lb-img'),lbCap=$('#lb-cap');
+let cur=0;
+function openAt(i){
+  cur=(i+shown.length)%shown.length;
+  const im=shown[cur].querySelector('img');
+  lbImg.src=im.src;lbImg.alt=im.alt;lbCap.textContent=im.alt;
+}
+figs.forEach(f=>f.querySelector('button').addEventListener('click',()=>{openAt(shown.indexOf(f));lb.showModal()}));
+$('#lb-p').addEventListener('click',e=>{e.stopPropagation();openAt(cur-1)});
+$('#lb-n').addEventListener('click',e=>{e.stopPropagation();openAt(cur+1)});
+$('#lb-x').addEventListener('click',()=>lb.close());
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb-in'))lb.close()});
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')openAt(cur-1);if(e.key==='ArrowRight')openAt(cur+1)});
+let sx=null;
+lbImg.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+lbImg.addEventListener('touchend',e=>{
+  if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;
+  if(Math.abs(dx)>50)openAt(cur+(dx<0?1:-1));
+});
+
+/* formulário -> WhatsApp */
+const st=$('#st');
+$('#f').addEventListener('submit',e=>{
+  e.preventDefault();
+  const nome=$('#n').value.trim(),desc=$('#d').value.trim(),s=($('input[name=s]:checked')||{}).value;
+  if(!s&&!desc){st.textContent='Escolha um serviço ou descreva o que precisa.';return}
+  if(!nome){st.textContent='Diga seu nome para a gente saber com quem falar.';$('#n').focus();return}
+  let m=`Olá, Valen Vidros! Gostaria de um orçamento.\n\n*Nome:* ${nome}\n`;
+  if(s)m+=`*Serviço:* ${s}\n`;
+  if(desc)m+=`*Detalhes:* ${desc}\n`;
+  const url=waUrl(m);
+  window.open(url,'_blank','noopener');
+  st.innerHTML=`Mensagem pronta no WhatsApp. Se não abriu, <a href="${url}" target="_blank" rel="noopener">toque aqui</a>.`;
+});
+</script>
+</body>
+</html>
