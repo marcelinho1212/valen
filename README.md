@@ -8,7 +8,7 @@ O site foi feito primeiro para celular e se adapta a tablet e desktop. É uma p�
 
 - **Abertura** com foto real, chamada principal e botões de orçamento e WhatsApp
 - **Serviços:** box de banheiro, vidro temperado, espelhos, sacadas e coberturas, e divisórias
-- **Galeria de trabalhos** com 28 fotos reais, filtros por tipo, botão "Ver mais" e foto ampliada com navegação por setas, teclado e deslize
+- **Galeria de trabalhos** com 73 fotos reais, filtros por tipo, botão "Ver mais" e foto ampliada com navegação por setas, teclado e deslize
 - **Como funciona**, em 4 passos
 - **Área de atendimento:** São Bernardo do Campo e região do ABC
 - **Formulário de orçamento** que monta a mensagem e abre o WhatsApp
@@ -50,7 +50,7 @@ Depois acesse `http://localhost:8765/`.
 
 | O que mudar | Onde |
 |---|---|
-| Telefone do WhatsApp | constante `PHONE` no `<script>` no fim do arquivo (formato `5511970661030`) |
+| Telefone do WhatsApp | constante `PHONE` no `<script>` no fim do arquivo (formato `5511947981561`) |
 | Telefone exibido e links `tel:` | seções de orçamento e rodapé do HTML |
 | Cores | variáveis CSS no início do `<style>` (`--bg`, `--card`, `--vio`, `--vio2`, `--lil`) |
 | Fotos da galeria | elementos `<figure data-c="...">` dentro de `#gal`; `data-c` define o filtro |
