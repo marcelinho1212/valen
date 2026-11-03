@@ -7,8 +7,7 @@ O site foi feito primeiro para celular e se adapta a tablet e desktop. É uma p�
 ## O que tem na página
 
 - **Abertura** com foto real, chamada principal e botões de orçamento e WhatsApp
-- **Serviços:** box de banheiro, vidro temperado, espelhos, sacadas e coberturas, e divisórias
-- **Galeria de trabalhos** com 73 fotos reais, filtros por tipo, botão "Ver mais" e foto ampliada com navegação por setas, teclado e deslize
+- **Trabalhos** com 65 fotos reais separadas por sessões (box, espelhos, portas e divisórias, janelas, sacadas, coberturas, guarda-corpo, churrasqueira). Miniaturas leves (WebP ~15 KB) e ampliação com navegação por setas, teclado e deslize
 - **Como funciona**, em 4 passos
 - **Área de atendimento:** São Bernardo do Campo e região do ABC
 - **Formulário de orçamento** que monta a mensagem e abre o WhatsApp
