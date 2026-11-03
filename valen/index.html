@@ -10,7 +10,7 @@
 <meta property="og:description" content="Da medição à instalação: box, espelhos, portas, sacadas, coberturas e guarda-corpos em vidro.">
 <meta property="og:image" content="fotos/hero.webp">
 <link rel="icon" href="logo-marca.png">
-<link rel="preload" as="image" href="fotos/hero.webp" fetchpriority="high">
+<link rel="preload" as="image" href="fotos/hero.webp" fetchpriority="high" media="(max-width:899px)">
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--bg:#111214;--bg2:#17181b;--line:rgba(255,255,255,.1);--text:#ececef;--muted:#9a9ca5;--acc:#cdbcf0;--vio:#6a54b8;
@@ -51,6 +51,21 @@ h2{font-size:clamp(1.8rem,6.5vw,3rem);margin-top:10px}
 .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(17,18,20,.55),rgba(17,18,20,.2) 30%,rgba(17,18,20,.85) 70%,var(--bg))}
 .hero-in{max-width:620px}
+/* desktop: fundo gráfico em CSS (sem foto), com vidros em ângulo e triângulos da marca */
+@media (min-width:900px){
+  .hero{background:
+    radial-gradient(60% 70% at 78% 40%,rgba(106,84,184,.34),transparent 70%),
+    radial-gradient(40% 50% at 95% 100%,rgba(205,188,240,.12),transparent 70%),
+    linear-gradient(180deg,#141519,var(--bg))}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 520' fill='none' stroke='%23cdbcf0'%3E%3Cpath d='M300 20 580 500H20Z' stroke-opacity='.42' stroke-width='1.6'/%3E%3Cpath d='M300 110 480 440H120Z' stroke-opacity='.3' stroke-width='1.4'/%3E%3Cpath d='M300 200 380 380H220Z' stroke-opacity='.22' stroke-width='1.2'/%3E%3C/svg%3E") no-repeat 82% 46%/min(46vw,640px),
+      linear-gradient(112deg,transparent 52%,rgba(255,255,255,.035) 52%,rgba(255,255,255,.035) 66%,transparent 66%),
+      linear-gradient(112deg,transparent 70%,rgba(255,255,255,.025) 70%,rgba(255,255,255,.025) 80%,transparent 80%),
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/100% 96px;
+    -webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+  .hero::after{background:linear-gradient(180deg,transparent 75%,var(--bg))}
+}
 .hero h1{font-size:clamp(2.1rem,9vw,4.2rem);margin-top:14px}
 .hero h1 em{font-style:normal;color:var(--acc)}
 .lead{margin-top:16px;color:#d3d4da;max-width:44ch}
@@ -166,7 +181,10 @@ textarea{min-height:120px;resize:vertical}
 
 <main>
 <section class="hero" id="inicio">
-  <img class="bg" src="fotos/hero.webp" alt="" width="900" height="1200" fetchpriority="high" decoding="async">
+  <picture>
+    <source media="(min-width:900px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <img class="bg" src="fotos/hero.webp" alt="" width="900" height="1200" fetchpriority="high" decoding="async">
+  </picture>
   <div class="hero-in">
     <p class="eyebrow">São Bernardo do Campo · Grande ABC</p>
     <h1>Vidro sob medida, <em>da medição à instalação.</em></h1>
